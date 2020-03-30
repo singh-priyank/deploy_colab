@@ -6,8 +6,6 @@
   <title>ML API</title>
   <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
@@ -15,18 +13,15 @@
 </head>
 
 <body>
-
-
-    
-	
-	
  <div class="login">
 	<h1>Predict Salary Analysis</h1>
 
-    <form method="POST">
-        <input type="text" name="context">
-	<input type="text" name="ques">   
-	<input type="submit" value="Send">
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="experience" placeholder="Experience" required="required" />
+        <input type="text" name="test_score" placeholder="Test Score" required="required" />
+		
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
     </form>
 
    <br>
@@ -34,8 +29,6 @@
    {{ prediction_text }}
 
  </div>
-
-
 
 
 </body>
