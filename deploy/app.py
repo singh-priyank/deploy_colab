@@ -22,10 +22,11 @@ def home():
 def predict():
     '''
     For rendering results on HTML GUI
-    '''
-    
+    '''        
     context=request.form['context']
+    context = requests.get(context)
     ques=request.form['ques']
+    ques= requests.get(ques)
         
     if context=='vaccines':
       out=ques_ans({'context': Vaccines,
@@ -39,7 +40,7 @@ def predict():
     
 
 
-    return render_template('index.html', prediction_text='Employee Salary should be $ {}'.format(output))
+    return render_template('index.html', prediction_text='Employee Salary should be $ {}'.jsonify(output))
 
 
 
