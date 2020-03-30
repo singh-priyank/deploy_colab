@@ -20,12 +20,10 @@ def home():
 
 @app.route('/predict',methods=['POST','GET'])
 def predict():
-    if(request.method=='POST')
-        context=request.form['context']
-        ques=request.form['ques']
-     else:
-        print('ok')
-        
+    
+    context=request.form['context']
+    ques=request.form['ques']
+       
     if context=='vaccines':
       out=ques_ans({'context': Vaccines,
                 'question': ques  })
