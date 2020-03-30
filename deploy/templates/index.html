@@ -23,12 +23,15 @@
  <div class="login">
 	<h1>Predict Salary Analysis</h1>
 
-    <form method="POST">
+    <form action="{{ url_for('predict') }}" method="post">
         <input type="text" name="context",placeholder="context">
 	<input type="text" name="ques",placeholder="context">   
 	<button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
     </form>
 
+	 
+	 
+	 
    <br>
    <br>
    {{ prediction_text }}
