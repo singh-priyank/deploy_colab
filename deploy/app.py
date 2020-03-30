@@ -23,9 +23,9 @@ def predict():
     '''
     For rendering results on HTML GUI
     '''
-    if request.method == "POST":
-	context = request.form["context"]
-    ques=request.form["ques"]
+    
+    context=request.form['context']
+    ques=request.form['ques']
         
     if context=='vaccines':
       out=ques_ans({'context': Vaccines,
