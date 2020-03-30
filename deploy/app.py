@@ -18,7 +18,7 @@ treatment='Since late December   SARS CoV  infection spread parts country and ov
 def home():
     return render_template('index.html')
 
-@app.route('/predict',methods=['POST','GET'])
+'''@app.route('/predict',methods=['POST','GET'])
 def predict():
     
     context=request.form['context']
@@ -32,7 +32,12 @@ def predict():
                 'question': ques  })
     
     output=out['answer']
+''''
 
+@app.route("/predict", methods = ['POST'])
+def predict():
+    output = request.form.get('select1')
+  
     
 
 
