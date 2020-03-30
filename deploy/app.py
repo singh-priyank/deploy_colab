@@ -23,15 +23,15 @@ def predict():
     '''
     For rendering results on HTML GUI
     '''
-    int_features = [int(x) for x in request.form.values()]
-    new=list(int_features)
-    context=new[0]
-    ques=new[1]
+    if request.method == "POST":
+	context = request.form["context"]
+    ques=request.form["ques"]
+        
     if context=='vaccines':
       out=ques_ans({'context': Vaccines,
                 'question': ques  })
     elif context=='treatment':
-        out=ques_ans({'context':treatment,
+      out=ques_ans({'context':treatment,
                 'question': ques  })
     
     output=out['answer']
