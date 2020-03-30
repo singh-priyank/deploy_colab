@@ -11,33 +11,66 @@
 <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-  
+  <style>
+
+    select {
+
+        width: 190px;
+
+        margin: 10px;
+
+    }
+
+    select:focus {
+
+        min-width: 150px;
+
+        width: auto;
+
+    }   
+	
+	div.login {text-align: center}
+	
+	div{margin: 30px;}
+
+</style>
 </head>
 
-<body>
-
+<body style="background-image: url(https://www.fda.gov/files/styles/featured_content_background_image/public/FoodProductsCOVID19_1600x900_0.jpg?itok=b1maF8cv);">
 
     
 	
-	
- <div class="login">
-	<h1>Predict Salary Analysis</h1>
-
+ <div class="login" >
+	<h1><font color="red">Predict Salary Analysis</font></h1>
+<br>
     <form action="{{ url_for('predict') }}" method="post">
-        <input type="text" name="context",placeholder="context">
-	<input type="text" name="ques",placeholder="context">   
-	<button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+	 <label for="cars" style ="font-weight: 900;"><font color="white">Choose a car:</font></label>
+
+	<form class = "ey" method="POST" action="{{ url_for('submitForm') }}"> <!-- note action -->
+    <select name="select1"> <!-- note the name -->
+        <option value="None">Select Course</option>
+        <option value="CS">Computer Science</option>
+        <option value="Civil">Civil</option>
+        <option value="DS">Data Science</option>
+        <option value="Electrical">Electrical</option>
+        <option value="Electronics">Electronics</option>
+        <option value="Chem">Chemical</option>
+        <option value="ME">Mechatronics</option>
+    </select>
+</form>
+	 <br>
+	 
+	 
+	 
+	<button type="submit" class="btn btn-primary btn-block btn-large" style ="font-weight: 900;">Predict</button>
     </form>
 
-	 
-	 
 	 
    <br>
    <br>
    {{ prediction_text }}
 
  </div>
-
 
 
 
