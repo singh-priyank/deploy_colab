@@ -43,10 +43,10 @@
  <div class="login" >
 	<h1><font color="red">Predict Salary Analysis</font></h1>
 <br>
-    <form action="{{ url_for('predict') }}" method="post">
+    <form action="{{ url_for('predict') }}" method="POST">
 	 <label for="cars" style ="font-weight: 900;"><font color="white">Choose a car:</font></label>
 
-	<form class = "ey" method="POST" action="{{ url_for('submitForm') }}"> <!-- note action -->
+<!--	<form class = "ey" method="POST" action="{{ url_for('submitForm') }}">           note action -->
     <select name="select1"> <!-- note the name -->
         <option value="None">Select Course</option>
         <option value="CS">Computer Science</option>
@@ -57,20 +57,29 @@
         <option value="Chem">Chemical</option>
         <option value="ME">Mechatronics</option>
     </select>
-</form>
 	 <br>
-	 
-	 
-	 
 	<button type="submit" class="btn btn-primary btn-block btn-large" style ="font-weight: 900;">Predict</button>
     </form>
-
-	 
+<!---
+	<form class="form-inline" method="POST" action="{{ url_for('test') }}">
+	<div class="form-group">
+	<div class="input-group">
+		<span class="input-group-addon">Please select</span>
+			<select name="comp_select" class="selectpicker form-control">
+			  {% for o in data %}
+			  <option value="{{ o.name }}">{{ o.name }}</option>
+			  {% endfor %}
+			</select>
+	</div>
+	<button type="submit" class="btn btn-default">Go</button>
+	</div>
+	</form>
+	 --->
    <br>
    <br>
-   {{ prediction_text }}
 
  </div>
+
 
 
 
